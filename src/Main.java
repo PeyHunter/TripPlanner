@@ -18,17 +18,18 @@ public class Main
             System.out.println("Menu");
             System.out.println("1. Create a trip");
             System.out.println("2. List avalible Trips");
+            System.out.println("3. Order one of our Trips3");
             System.out.println("Exit");
 
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice)
             {
                  case 1:
-                     System.out.print("Enter vacation type");
+                     System.out.print("Enter vacation type (Skiing or Beaching) ");
                      String type = scanner.nextLine();
 
-                     scanner.nextLine();
 
                      System.out.print("Enter trip location ");
                      String location = scanner.nextLine();
@@ -46,11 +47,10 @@ public class Main
 
                      tripList.addTripToList(location, type, duration, id);
 
-
                      System.out.println("\nTrip added succesfully");
 
                      Trip createdTrip = tripList.getTrips().get(tripList.getTrips().size() - 1);
-                     System.out.print("\n You have ordered this trip");
+                     System.out.print("\n You have ordered this trip" + "\n\n");
                      System.out.println(createdTrip);
 
                      saveTripToFile(createdTrip);
@@ -63,7 +63,36 @@ public class Main
                     System.out.println(tripList);
                     break;
 
+
+
                 case 3:
+                    System.out.println("Order one of our trips\n");
+
+                    System.out.println("Availible trips:");
+                    for (int i = 0; i < tripList.getTrips().size(); i++)
+                    {
+                        Trip trip = tripList.getTrips().get(i);
+                        System.out.println(trip.toString());
+                    }
+                    System.out.println("Select the ID nr of the vacation you want to order");
+
+                    int tripIndex = scanner.nextInt();
+                    scanner.nextLine();
+
+
+                    Trip selectedTrip = tripList.getTrips().get(tripIndex-1);
+
+                    System.out.println("You have selected this trip: ");
+                    System.out.println(selectedTrip);
+
+                    saveTripToFile(selectedTrip);
+                    break;
+
+
+
+
+
+                case 4:
                     // Exit the program
                     System.out.println("Exiting...");
                     running = false;
@@ -74,11 +103,7 @@ public class Main
                     break;
 
 
-
-
-
             }
-
 
         }
 scanner.close();
@@ -88,7 +113,7 @@ scanner.close();
     }
         private static void saveTripToFile (Trip trip)
         {
-            File file = new File("trips.txt");
+            File file = new File("/Users/peytonhunter/Library/CloudStorage/OneDrive-Personal/Documents/Datamatiker/2. Semester/Programering (2 Sem)/Opgaver/TripPlanner/trips.txt");
 
             try (FileWriter fileWriter = new FileWriter(file, true))
             {

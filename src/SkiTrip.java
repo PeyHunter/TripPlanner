@@ -12,4 +12,14 @@ public class SkiTrip extends Trip
         this.liftCardPrice = liftCardPrice;
     }
 
+    @Override
+    public String toString()
+    {
+
+        return "Vacation type: " + vacationType + "\n" +
+                "Location: " + location + "\n" +
+                "Duration: " + durationInDays + "\n" +
+                "selected ID number: " + vacationID + "\n";
+    }
+
 }

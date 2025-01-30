@@ -15,5 +15,15 @@ public class BeachTrip extends Trip
         this.temp = temp;
     }
 
+    @Override
+    public String toString()
+    {
+
+        return "Vacation type: " + vacationType + "\n" +
+                "Location: " + location + "\n" +
+                "Duration: " + durationInDays + "\n" +
+                "selected ID number: " + vacationID + "\n";
+    }
+
 
 }

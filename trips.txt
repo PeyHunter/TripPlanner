@@ -1,1 +1,10 @@
-BeachTrip@1f17ae12
+Vacation type: Skiing
+Location: Norditalien
+Duration: 14
+selected ID number: 1
+
+Vacation type: Beaching
+Location: Bali, Indonesien
+Duration: 14
+selected ID number: 8
+
