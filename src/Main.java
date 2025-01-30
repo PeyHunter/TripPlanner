@@ -25,17 +25,21 @@ public class Main
             switch (choice)
             {
                  case 1:
+                     System.out.print("Enter vacation type");
+                     String type = scanner.nextLine();
+
+                     scanner.nextLine();
+
                      System.out.print("Enter trip location ");
                      String location = scanner.nextLine();
 
-                     System.out.print("Enter vacation type");
-                     String type = scanner.nextLine();
 
                      System.out.print("Enter trip duration in days: ");
                      int duration  = scanner.nextInt();
 
-                     System.out.print("Enter ID nr \n");
+                     System.out.print("Enter ID nr: ");
                      int id  = scanner.nextInt();
+
                      scanner.nextLine();
 
                      //add to tripList:
